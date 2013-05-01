@@ -1,0 +1,4 @@
+c:\users\gbr5257\documents\visual studio 2010\FoldingTableRows\WebApplication1\WebApplication1\obj\Debug\ResolveAssemblyReference.cache
+c:\users\gbr5257\documents\visual studio 2010\FoldingTableRows\WebApplication1\WebApplication1\obj\Debug\WebApplication1.Resources.resources
+c:\users\gbr5257\documents\visual studio 2010\FoldingTableRows\WebApplication1\WebApplication1\obj\Debug\GenerateResource.read.1.tlog
+c:\users\gbr5257\documents\visual studio 2010\FoldingTableRows\WebApplication1\WebApplication1\obj\Debug\GenerateResource.write.1.tlog

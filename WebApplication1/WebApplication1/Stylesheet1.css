@@ -1,0 +1,184 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #ffffff;
+	color: #6d6d6d;
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	font-size: 76%;
+	display: inline;
+}
+H1 {
+	font-size: 2.5em;
+	font-weight: bold;
+	color: #4682B4;
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	display: block;
+	margin: 0;
+	margin-top: 1.2em;
+	margin-bottom: 0.5em;
+}	
+H2 {
+	font-size: 1.1em;
+	font-weight: bold;
+	color: #4682B4;
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	display: block;
+	margin: 0;
+	margin-top: 1.2em;
+	margin-bottom: 0.5em;
+}	
+form {
+	margin: 0;
+}
+img {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+.block {
+    display: block;
+    float: none;
+    clear: both;
+}
+#panel-grid {
+	margin: 0;
+	border: 0;
+	padding: 0;
+	margin-left: 1em;
+	height: auto;
+	display: inherit;
+	float: left;
+} 
+.grid-main {
+    margin: 0;
+    border: 0;
+    border-bottom: solid 1px #E1E1E1;
+	padding: 0;
+    font-size: 0.9em;
+    display: block;
+} 
+.grid-main td {
+    text-align: left;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+td.grid-main-celr {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    text-align: right;
+}
+
+.img-details {
+	margin: 0;
+	width: 16px;
+	height: 16px;
+	cursor: pointer;
+	vertical-align: bottom;
+	display:inline-block;
+}
+
+/* -----   Top models panel   ----- */
+
+.expand-painel {
+	margin-left: 4em;
+	height: auto;
+}
+
+.error-models {
+	color: Maroon;
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	font-size: 0.9em;
+	font-weight: bold;
+}
+.notfound-models {
+	color: #3D3D6D;
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	font-size: 0.9em;
+	font-weight: bold;
+}
+
+table.tab-mod {
+	display: inline;
+	border: solid 1px #FEFEFE;
+	background-color: #F7F7FF;
+	border-collapse: collapse;
+	overflow: hidden;
+}
+.tab-mod th{
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+	font-size: 0.9em;
+	font-weight: bold;
+    color: #3D3D6D;
+	text-decoration: none;
+	text-align: center;
+	margin: 0;
+	border: solid 1px #DDDDDD;
+	border-collapse: collapse;	
+	padding-bottom: 0.5em;
+	padding-top: 0.5em;
+	padding-left: 0.8em;
+	padding-right: 0.8em;
+}
+.tab-mod td {
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+	font-size: 0.9em;
+	font-weight:normal;
+    color: #6D6D6D;
+	text-decoration: none;
+	margin: 0;
+	border: solid 1px #FFFFFF;
+	border-collapse: collapse;
+	padding-bottom: 0.5em;
+	padding-top: 0.5em;
+	padding-left: 0.8em;
+	padding-right: 0.8em;
+    text-align: left;
+}
+td.cellright {
+    text-align: right;
+}
+td.cellcenter {
+    text-align: right;
+}
+
+/* -----   Error messages   ----- */
+.painelMsgErro {
+	display: block;
+	width: 350px;
+	background-color: #fff;
+	color: #000000;
+	border: solid 1px #D6D6CE;	
+}
+.painelMsgErroTopo {
+	width: 100%;
+	background-color: #DA251E;
+	color: #ffffff;
+	font-weight: bold;
+	border: solid 1px #D6D6CE;
+	padding: 0;
+	margin : 0;
+}
+.painelMsgErroMsg {
+	width: 100%;
+	background-color: #fff;
+	color: #000000;
+	margin: 0;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+.painelMsgErroBotoes {
+	width: 100%;
+	background-color: #F8F8F8;
+	text-align: center;
+	border: solid 1px #CC0033;
+	padding: 0;
+	margin : 0;
+}
+.painelMsgErroBotoes A:link, .painelMsgErroBotoes A:visited, .painelMsgErroBotoes A:hover, .painelMsgErroBotoes A:active, .painelMsgErroBotoes A:focus  {
+	color: #fff;
+	background-color: #DA251E;
+	text-decoration: none;
+	font-weight: bold;
+	border: solid 1px #CC0033;	
+	padding: 2px 2em 2px 2em;
+}

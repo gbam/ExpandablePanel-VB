@@ -1,0 +1,397 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+FoldingTable
+</name>
+</assembly>
+<members>
+<member name="P:FoldingTable.My.MyWebExtension.Application">
+	<summary>
+ Returns information about the current application.
+ </summary>
+</member><member name="P:FoldingTable.My.MyWebExtension.Computer">
+	<summary>
+ Returns information about the host computer.
+ </summary>
+</member><member name="P:FoldingTable.My.MyWebExtension.User">
+	<summary>
+ Returns information for the current Web user.
+ </summary>
+</member><member name="P:FoldingTable.My.MyWebExtension.Request">
+	<summary>
+ Returns Request object.
+ </summary>
+</member><member name="P:FoldingTable.My.MyWebExtension.Response">
+	<summary>
+ Returns Response object.
+ </summary>
+</member><member name="P:FoldingTable.My.MyWebExtension.Log">
+	<summary>
+ Returns the Asp log object.
+ </summary>
+</member><member name="P:FoldingTable.My.MyWebExtension.WebServices">
+	<summary>
+ Provides access to WebServices added to this project.
+ </summary>
+</member><member name="T:FoldingTable.My.MyWebExtension">
+	<summary>
+ Module used to define the properties that are available in the My Namespace for Web projects.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:FoldingTable.TopStoreSimulated.#ctor">
+	<summary>
+ Fills a collection with simulated data, on top stores
+ </summary>
+</member><member name="M:FoldingTable.TopStoreSimulated.GetData">
+	<summary>
+ Get a collection of top stores (simulated)
+ </summary>
+	<returns>A collection of top stores</returns>
+</member><member name="M:FoldingTable.TopModel.#ctor">
+	<summary>
+ Constructor
+ </summary>
+</member><member name="M:FoldingTable.TopModel.GetTopModels(System.Int32,System.Boolean)">
+	<summary>
+ Get top models for one customer/store
+ </summary>
+	<param name="customerId">Customer ID = Store ID</param>
+	<param name="simulated">True = Simulated data ; False = Read from AdventureWorks database</param>
+	<returns>A collection of top models sold by that store</returns>
+</member><member name="M:FoldingTable.TopModel.PopulateModelsSimulated(System.Int32)">
+	<summary>
+ Populates the collection with simulated data
+ </summary>
+	<param name="customerId">Customer ID = Store ID</param>
+	<returns>A collection of top models sold by that store</returns>
+</member><member name="M:FoldingTable.TopModel.PopulateModelsStores(System.Int32)">
+	<summary>
+ Populates the collection with data read from the AdventureWorks database
+ </summary>
+	<param name="customerId">Customer ID = Store ID</param>
+	<returns>A collection of top models sold by that store</returns>s
+
+</member><member name="T:FoldingTable.TopModel">
+	<summary>
+ Business logic layer class, to access 'TopModel' in data access layer
+ </summary>
+</member><member name="F:FoldingTable._Default._TopStore">
+	<summary>
+ Collection of top stores
+ </summary>
+</member><member name="F:FoldingTable._Default._VisibleColumns">
+	<summary>
+ Number of visible columns
+ </summary>
+</member><member name="F:FoldingTable._Default._Buttons">
+	<summary>
+ Stores the identifications of buttons.
+ <para>Will be used to enable/disable all buttons.</para>
+	</summary>
+</member><member name="M:FoldingTable._Default.Page_Load(System.Object,System.EventArgs)">
+	<summary>
+ Page load.
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+</member><member name="M:FoldingTable._Default.Page_UnLoad(System.Object,System.EventArgs)">
+	<summary>
+ Releases allocated memory
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+</member><member name="M:FoldingTable._Default.PrepareExpandableLines">
+	<summary>
+ Register the script to expand/contract details in order to show models
+ </summary>
+</member><member name="M:FoldingTable._Default.odsStores_Selecting(System.Object,System.Web.UI.WebControls.ObjectDataSourceSelectingEventArgs)">
+	<summary>
+ Select simulated or data base stored data
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+</member><member name="M:FoldingTable._Default.odsStores_ObjectCreating(System.Object,System.Web.UI.WebControls.ObjectDataSourceEventArgs)">
+	<summary>
+ Instantiates the business logic layer object, in order to fill the main grid
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+</member><member name="M:FoldingTable._Default.odsStores_ObjectDisposing(System.Object,System.Web.UI.WebControls.ObjectDataSourceDisposingEventArgs)">
+	<summary>
+ This method is called when the object odsStores releases memory used by the business logic layer object.
+ <para>If some error was found when reading from database, this method will show the error message.</para>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+</member><member name="M:FoldingTable._Default.gridStores_RowDataBound(System.Object,System.Web.UI.WebControls.GridViewRowEventArgs)">
+	<summary>
+ Called for each row of the main grid, calls a method to prepare the details
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+</member><member name="M:FoldingTable._Default.gridStores_DataBound(System.Object,System.EventArgs)">
+	<summary>
+ Called after the main grid was bound
+ <para>Will create a Javascrip array, used to enable/disable the buttons</para>
+		<para>See function EnableExpandButtons in ExpandPanel.js</para>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+</member><member name="M:FoldingTable._Default.InsertModelsRow(System.Web.UI.WebControls.GridViewRow,FoldingTable.Store)">
+	<summary>
+ Prepares to show the top models for one store.
+ <para>A new hidden row is inserted below the current row in the grid.</para>
+		<para>That row will have only one cell, spanned to the entire row.</para>
+		<para>Inside the new row, a panel is inserted as a simple HTML 'fieldset', just to show a border and some header.</para>
+		<para>Inside the fieldset, a new panel is inserted. That panel will be filled with details when the user click the button.</para>
+	</summary>
+	<param name="gridViewRow">One row from the main grid</param>
+	<param name="storeRow">One store</param>
+</member><member name="P:FoldingTable._Default.VisibleColumns">
+	<summary>
+ Number of visible columns
+ </summary>
+</member><member name="M:FoldingTable._Default.ShowErrorMessage">
+	<summary>
+ Shows a generic error message to the user
+ </summary>
+</member><member name="M:FoldingTable._Default.ExpandModelsService(System.String)">
+	<summary>
+ Builds a string to populate the expanded line with the models
+ </summary>
+	<param name="contextKey">CustomerId + radSimulatedData.Checked, separated by '-'</param>
+	<returns>HTML table filled with top models</returns>
+</member><member name="M:FoldingTable._Default.PopulateDetailsTable(System.Collections.ObjectModel.ReadOnlyCollection{FoldingTable.Model})">
+	<summary>
+ Populates a HTML table with the top models data
+ </summary>
+	<param name="topModels">Data about the top models</param>
+	<returns>HTML table filled with top models</returns>
+</member><member name="F:FoldingTable.TopStore._Stores">
+	<summary>
+ Collection of top stores
+ </summary>
+</member><member name="F:FoldingTable.TopStore._Error">
+	<summary>
+ Error reading from the database
+ </summary>
+</member><member name="M:FoldingTable.TopStore.#ctor">
+	<summary>
+ Constructor
+ </summary>
+</member><member name="M:FoldingTable.TopStore.GetData">
+	<summary>
+ Get top stores data from AdventureWorks database or simulated
+ </summary>
+	<returns>Top stores</returns>
+</member><member name="M:FoldingTable.TopStore.PopulateStoresSimulated">
+	<summary>
+ Populates the collection with simulated data
+ </summary>
+</member><member name="M:FoldingTable.TopStore.GetRowCount">
+	<summary>
+ Number of rows retrieved
+ </summary>
+	<returns></returns>
+</member><member name="P:FoldingTable.TopStore.Error">
+	<summary>
+ Indicates some error ocurred when getting data
+ </summary>
+</member><member name="M:FoldingTable.TopStore.Dispose">
+	<summary>
+ Releases resources used by this class
+ </summary>
+</member><member name="P:FoldingTable.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:FoldingTable.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:FoldingTable.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="P:FoldingTable.Model.ProductModelId">
+	<summary>
+ Model ID
+ </summary>
+</member><member name="P:FoldingTable.Model.CustomerId">
+	<summary>
+ Customer ID = Store ID
+ </summary>
+</member><member name="P:FoldingTable.Model.Name">
+	<summary>
+ Model name
+ </summary>
+</member><member name="P:FoldingTable.Model.Qty">
+	<summary>
+ Quantity sold
+ </summary>
+</member><member name="P:FoldingTable.Model.TotalPrice">
+	<summary>
+ Total price of all invoices (issued by that customer)
+ </summary>
+</member><member name="P:FoldingTable.Model.LastSale">
+	<summary>
+ Last sale date
+ </summary>
+</member><member name="F:FoldingTable.Store._CustomerId">
+	<summary>
+ One store
+ </summary>
+</member><member name="M:FoldingTable.Store.#ctor(System.Int32,System.String,System.Decimal)">
+	<summary>
+ Constructor
+ </summary>
+	<param name="customerId">Customer ID = Store ID</param>
+	<param name="name">      Store name</param>
+	<param name="sales">     Sales value</param>
+</member><member name="P:FoldingTable.Store.CustomerId">
+	<summary>
+ Customer ID = Store ID
+ </summary>
+</member><member name="P:FoldingTable.Store.StoreName">
+	<summary>
+ Store name
+ </summary>
+</member><member name="P:FoldingTable.Store.Sales">
+	<summary>
+ Sales value
+ </summary>
+</member><member name="F:FoldingTable._Default.Head1">
+	<summary>
+Head1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:FoldingTable._Default.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:FoldingTable._Default.ScriptManager1">
+	<summary>
+ScriptManager1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:FoldingTable._Default.radSimulatedData">
+	<summary>
+radSimulatedData control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:FoldingTable._Default.radSqlData">
+	<summary>
+radSqlData control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:FoldingTable._Default.gridStores">
+	<summary>
+gridStores control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:FoldingTable._Default.odsStores">
+	<summary>
+odsStores control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:FoldingTable._Default.dinPopMod">
+	<summary>
+dinPopMod control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:FoldingTable._Default.painelAux">
+	<summary>
+painelAux control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:FoldingTable._Default.painelMsgErro">
+	<summary>
+painelMsgErro control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:FoldingTable._Default.lblMsgErroTitulo">
+	<summary>
+lblMsgErroTitulo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:FoldingTable._Default.lblMsgErro">
+	<summary>
+lblMsgErro control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:FoldingTable._Default.btnErroOk">
+	<summary>
+btnErroOk control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:FoldingTable._Default.hiddenTargetControlForModalPopup">
+	<summary>
+hiddenTargetControlForModalPopup control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:FoldingTable._Default.popupMsgErro">
+	<summary>
+popupMsgErro control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="M:FoldingTable.TopModelSimulated.#ctor">
+	<summary>
+ Fills a collection with simulated data, on top models sold by stores
+ </summary>
+</member><member name="M:FoldingTable.TopModelSimulated.GetData(System.Int32)">
+	<summary>
+ Get a collection of top models sold by one store
+ </summary>
+	<param name="customerId">Customer ID = Store ID</param>
+	<returns>Collection of top models</returns>
+</member>
+</members>
+</doc>
